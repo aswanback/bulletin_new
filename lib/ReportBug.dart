@@ -21,7 +21,7 @@ class _ReportBugState extends State<ReportBug> {
         ),
       ),
       body: Center(
-        child: Text('we dont have bugs go away'),
+        child: Text('we ave bugs go away'),
       ),
 
     );
