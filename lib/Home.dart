@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
@@ -56,6 +55,14 @@ class _HomeState extends State<Home> {
               child: Image.asset('assets/name.png'),
             ),
           ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/addphoto');
+            },
+            child: Icon(
+              Icons.add,
+            ),
+          ),
           body: Padding(
             padding: EdgeInsets.all(10),
             child: GridView.count(
@@ -69,8 +76,8 @@ class _HomeState extends State<Home> {
                     child: PhotoView(
                       backgroundDecoration: BoxDecoration(color: Colors.white),
                       enableRotation: true,
-                      minScale: PhotoViewComputedScale.contained*0.2,
-                      maxScale: PhotoViewComputedScale.contained*5,
+                      minScale: PhotoViewComputedScale.contained,
+                      maxScale: PhotoViewComputedScale.contained*2,
                       initialScale: PhotoViewComputedScale.contained,
                       basePosition: Alignment.center,
                       loadFailedChild: CircularProgressIndicator(),
@@ -111,14 +118,6 @@ class _HomeState extends State<Home> {
                     child: Image.asset('assets/flyers/Flyer6.jpg'),
                   ),
                 ]),
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/addphoto');
-            },
-            child: Icon(
-              Icons.add,
-            ),
           ),
         ),
       ],
