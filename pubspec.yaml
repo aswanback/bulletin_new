@@ -24,12 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
   photo_view:
-  firebase_core: ^0.5.3
-  firebase_analytics: ^6.2.0
-  firebase_auth: ^0.18.4
-  cloud_firestore: ^0.14.4
-  firebase_auth_oauth: ^0.2.2
-  firebase_database: ^4.4.0
 
 
   # The following adds the Cupertino Icons font to your application.

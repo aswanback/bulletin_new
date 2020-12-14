@@ -33,9 +33,9 @@ class _HomeState extends State<Home> {
               ),
             ),*/
             leading: IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/settings');
-              },
+              onPressed:null,// () {
+                //Navigator.pushNamed(context, '/settings');
+             // },
               icon: Icon(Icons.account_circle,
                   color: Colors.grey[800], size: 30.0),
             ),
