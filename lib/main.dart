@@ -8,25 +8,21 @@ import 'package:bulletin/Pinned.dart';
 import 'package:bulletin/ReportBug.dart';
 import 'package:bulletin/Settings.dart';
 import 'package:bulletin/Tos.dart';
-import 'package:bulletin/Contacty.dart';
+import 'package:bulletin/ContactUs.dart';
+//import 'package:firebase_core/firebase_core.dart';
 
-
-
-
-void main() => runApp(MaterialApp(
-    routes: {
-      '/': (context) => Loading(),
-      '/login': (context) => LoginRegisterPage(),
-      '/home': (context) => Home(),
-      '/pinned': (context) => Pinned(),
-      '/addphoto': (context) => AddPhoto(),
-      '/settings': (context) => Settings(),
-      '/tos': (context) => Tos(),
-      '/password': (context) => Password(),
-      '/reportbug': (context) => ReportBug(),
-      '/contact': (context) => Contact(),
-      //'/communities': (context) => Communities(),   add later
-
-
-    }
-  ));
+void main() {
+  runApp(MaterialApp(routes: {
+    '/': (context) => Loading(),
+    '/login': (context) => LoginRegisterPage(),
+    '/home': (context) => Home(),
+    '/pinned': (context) => Pinned(),
+    '/addphoto': (context) => AddPhoto(),
+    '/settings': (context) => Settings(),
+    '/tos': (context) => Tos(),
+    '/password': (context) => Password(),
+    '/reportbug': (context) => ReportBug(),
+    '/contact': (context) => ContactUs(),
+    //'/communities': (context) => Communities(),   add later
+  }));
+}

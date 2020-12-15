@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Contact extends StatefulWidget {
+
+class ContactUs extends StatefulWidget {
   @override
-  _ContactState createState() => _ContactState();
+  _ContactUsState createState() => _ContactUsState();
 }
 
-class _ContactState extends State<Contact> {
+class _ContactUsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
