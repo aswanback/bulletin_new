@@ -1,18 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AddPhoto extends StatefulWidget {
+
+class terms_of_service extends StatefulWidget {
   @override
-  _AddPhotoState createState() => _AddPhotoState();
+  _terms_of_serviceState createState() => _terms_of_serviceState();
 }
 
-class _AddPhotoState extends State<AddPhoto> {
+class _terms_of_serviceState extends State<terms_of_service> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.light,
         backgroundColor: Colors.grey[100],
-        title: Text('Post a flyer', style: TextStyle(color: Colors.grey[800])),
+        title: Text('Terms of Service', style: TextStyle(color: Colors.grey[800])),
         automaticallyImplyLeading: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Colors.grey[800]),
@@ -20,7 +22,7 @@ class _AddPhotoState extends State<AddPhoto> {
         ),
       ),
       body: Center(
-        child: Text('add a photo biglow'),
+        child: Text('we literally own you'),
       ),
 
     );

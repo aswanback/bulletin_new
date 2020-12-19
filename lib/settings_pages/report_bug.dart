@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ReportBug extends StatefulWidget {
+class report_bug extends StatefulWidget {
   @override
-  _ReportBugState createState() => _ReportBugState();
+  _report_bugState createState() => _report_bugState();
 }
 
-class _ReportBugState extends State<ReportBug> {
+class _report_bugState extends State<report_bug> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

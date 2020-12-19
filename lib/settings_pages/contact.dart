@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Password extends StatefulWidget {
+class contact extends StatefulWidget {
   @override
-  _PasswordState createState() => _PasswordState();
+  _contactState createState() => _contactState();
 }
 
-class _PasswordState extends State<Password> {
+class _contactState extends State<contact> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.light,
         backgroundColor: Colors.grey[100],
-        title: Text('Change password', style: TextStyle(color: Colors.grey[800])),
+        title: Text('Help', style: TextStyle(color: Colors.grey[800])),
         automaticallyImplyLeading: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Colors.grey[800]),
@@ -21,7 +21,7 @@ class _PasswordState extends State<Password> {
         ),
       ),
       body: Center(
-        child: Text("jk lol you're stuck with Password1"),
+        child: Text('please dont'),
       ),
 
     );

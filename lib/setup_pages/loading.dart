@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Loading extends StatefulWidget {
+
+class loading extends StatefulWidget {
   @override
-  _LoadingState createState() => _LoadingState();
+  _loadingState createState() => _loadingState();
 }
 
-class _LoadingState extends State<Loading> {
+class _loadingState extends State<loading> {
   void delayTime() async {
     await Future.delayed(Duration(seconds: 1), () {
       Navigator.pushReplacementNamed(context, '/login');
     });
   }
-
   @override
   void initState() {
     super.initState();

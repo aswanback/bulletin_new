@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Pinned extends StatefulWidget {
+class pinned extends StatefulWidget {
   @override
-  _PinnedState createState() => _PinnedState();
+  _pinnedState createState() => _pinnedState();
 }
 
-class _PinnedState extends State<Pinned> {
+class _pinnedState extends State<pinned> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   photo_view:
+  page_transition: "^1.1.7+2"
   firebase_core: "0.5.3"
   #firebase_auth: "^0.15.4"
   #cloud_firestore: 0.13.4

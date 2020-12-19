@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Tos extends StatefulWidget {
+class change_password extends StatefulWidget {
   @override
-  _TosState createState() => _TosState();
+  _change_passwordState createState() => _change_passwordState();
 }
 
-class _TosState extends State<Tos> {
+class _change_passwordState extends State<change_password> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.light,
         backgroundColor: Colors.grey[100],
-        title: Text('Terms of Service', style: TextStyle(color: Colors.grey[800])),
+        title: Text('Change password', style: TextStyle(color: Colors.grey[800])),
         automaticallyImplyLeading: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, color: Colors.grey[800]),
@@ -21,7 +21,7 @@ class _TosState extends State<Tos> {
         ),
       ),
       body: Center(
-        child: Text('we literally own you'),
+        child: Text("jk lol you're stuck with Password1"),
       ),
 
     );

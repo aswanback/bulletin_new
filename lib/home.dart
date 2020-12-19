@@ -1,13 +1,17 @@
 import 'dart:math';
+import 'package:bulletin/add_photo.dart';
+import 'package:bulletin/pinned.dart';
+import 'package:bulletin/settings_pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:page_transition/page_transition.dart';
 
-class Home extends StatefulWidget {
+class home extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _homeState createState() => _homeState();
 }
 
-class _HomeState extends State<Home> {
+class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -34,7 +38,7 @@ class _HomeState extends State<Home> {
             ),*/
             leading: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/settings');
+                Navigator.push(context, SlideRightRoute(page: settings()));
               },
               icon: Icon(Icons.account_circle,
                   color: Colors.grey[800], size: 30.0),
@@ -44,7 +48,7 @@ class _HomeState extends State<Home> {
                 angle: 7 * pi / 4,
                 child: IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/pinned');
+                      Navigator.pushNamed(context,'/pinned');
                     },
                     icon: Icon(Icons.push_pin,
                         color: Colors.grey[800], size: 30.0)),
@@ -57,7 +61,7 @@ class _HomeState extends State<Home> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/addphoto');
+              Navigator.push(context, PageTransition(type: PageTransitionType.bottomToTop, child: add_photo()));
             },
             child: Icon(
               Icons.add,
@@ -123,4 +127,57 @@ class _HomeState extends State<Home> {
       ],
     );
   }
+}
+
+
+class SlideRightRoute extends PageRouteBuilder {
+  final Widget page;
+  SlideRightRoute({this.page})
+      : super(
+    pageBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        ) =>
+    page,
+    transitionsBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        Widget child,
+        ) =>
+        SlideTransition(
+          position: Tween<Offset>(
+            begin: const Offset(-1, 0),
+            end: Offset.zero,
+          ).animate(animation),
+          child: child,
+        ),
+  );
+}
+
+class SlideLeftRoute extends PageRouteBuilder {
+  final Widget page;
+  SlideLeftRoute({this.page})
+      : super(
+    pageBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        ) =>
+    page,
+    transitionsBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        Widget child,
+        ) =>
+        SlideTransition(
+          position: Tween<Offset>(
+            begin: const Offset(-1, 0),
+            end: Offset.infinite,
+          ).animate(animation),
+          child: child,
+        ),
+  );
 }

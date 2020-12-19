@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Settings extends StatefulWidget {
+class settings extends StatefulWidget {
   @override
-  _SettingsState createState() => _SettingsState();
+  _settingsState createState() => _settingsState();
 }
 
-class _SettingsState extends State<Settings> {
-
+class _settingsState extends State<settings> {
   var name = 'Jeff Bezos';
   bool isSwitched = false;
   double rating = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +31,6 @@ class _SettingsState extends State<Settings> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -71,9 +70,12 @@ class _SettingsState extends State<Settings> {
                               ),
                             ],
                           ),
-                          Text(
-                              'The title, date, time and other information about the flyer will be displayed below each flyer',
-                              style: TextStyle(fontSize: 12))
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                            child: Text(
+                                'The title, date, time and other information about the flyer will be displayed below each flyer',
+                                style: TextStyle(fontSize: 12)),
+                          )
                         ],
                       ),
                     ),
@@ -110,7 +112,7 @@ class _SettingsState extends State<Settings> {
                           ],
                         )),
                   ],
-                ),  //DISPLAY
+                ), //DISPLAY
 
                 /*Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,21 +162,32 @@ class _SettingsState extends State<Settings> {
                       ), //Help
                       FlatButton(
                         //Report a bug
-                        onPressed:  () {
+                        onPressed: () {
                           Navigator.pushNamed(context, '/reportbug');
                         },
-                        padding: EdgeInsets.symmetric(horizontal: 40),
-                        child: Text('Report a bug / Suggest a feature',
-                            style: TextStyle(color: Colors.black)),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: Text(
+                            'Report a bug / Suggest a feature',
+                            style: TextStyle(color: Colors.black),
+                            textAlign: TextAlign.start,
+                          ),
+                        ),
                       ), //Report a bug
                       FlatButton(
-                        //Report a bug
+                        //Contact us
                         onPressed: () {
                           Navigator.pushNamed(context, '/contact');
                         },
-                        padding: EdgeInsets.symmetric(horizontal: 40),
-                        child: Text('Contact us',
-                            style: TextStyle(color: Colors.black)),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: Text('Contact us',
+                              style: TextStyle(color: Colors.black)),
+                        ),
                       ), //Report a bug
                     ],
                   ),
@@ -189,7 +202,7 @@ class _SettingsState extends State<Settings> {
                       alignment: Alignment(-1, 0),
                       color: Colors.grey[200],
                       child: TextButton.icon(
-                          onPressed:null,
+                          onPressed: null,
                           icon: Icon(
                             Icons.info,
                             color: Colors.black,
@@ -199,12 +212,16 @@ class _SettingsState extends State<Settings> {
                     ), //About
                     FlatButton(
                       //Terms of Service
-                      onPressed:  () {
+                      onPressed: () {
                         Navigator.pushNamed(context, '/tos');
                       },
-                      padding: EdgeInsets.symmetric(horizontal: 40),
-                      child: Text('Terms of Service',
-                          style: TextStyle(color: Colors.black)),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Text('Terms of Service',
+                            style: TextStyle(color: Colors.black)),
+                      ),
                     ), //Terms of service
                   ],
                 ), //ABOUT
@@ -212,7 +229,6 @@ class _SettingsState extends State<Settings> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 5),
                     Container(
                         //Security
                         color: Colors.grey[200],
@@ -229,23 +245,32 @@ class _SettingsState extends State<Settings> {
                       onPressed: () {
                         Navigator.pushNamed(context, '/password');
                       },
-                      padding: EdgeInsets.symmetric(horizontal: 40),
-                      child: Text('Change password', style: TextStyle(color: Colors.black)),),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Text('Change password',
+                            style: TextStyle(color: Colors.black)),
+                      ),
+                    ),
                     //Change password
                     FlatButton(
                       //Change password
-                      onPressed: null,
-                      padding: EdgeInsets.symmetric(horizontal: 40),
-                      child:
-                          Text('Logout', style: TextStyle(color: Colors.red)),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/login');
+                      },
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      child: SizedBox(
+                          width: double.infinity,
+                          child: Text('Logout',
+                              style: TextStyle(color: Colors.red))),
                     ),
                   ],
                 ), //SECURITY
-
               ],
             ),
           ),
-        )
-    );
+        ));
   }
 }
