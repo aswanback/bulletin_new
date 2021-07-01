@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:Bulletin/functions.dart';
+
+
+
 
 class login extends StatefulWidget {
   @override
@@ -6,8 +11,10 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+
   @override
   bool newValue;
+  bool _isChecked = true;
 
   Widget build(BuildContext context) {
     return Stack(
@@ -30,7 +37,7 @@ class _loginState extends State<login> {
                     Flexible(
                       fit: FlexFit.loose,
                       flex: 20,
-                      child: SizedBox(height: 100),
+                      child: SizedBox(height: screenHeight(context,dividedBy: 6)),
                     ), //Spacer
                     Flexible(
                       fit: FlexFit.loose,
@@ -44,10 +51,11 @@ class _loginState extends State<login> {
                       ),
                     ), //Logo
                     Flexible(
-                      flex: 20,
+                      flex: 1,
                       fit: FlexFit.loose,
-                      child: SizedBox(height: 200.0),
-                    ), //Spcaer
+                      child: SizedBox(height: screenHeight(context,dividedBy:6)),
+                      ),
+                    //Spcaer
                     Flexible(
                       //Email + Password
                       flex: 40,
@@ -99,18 +107,39 @@ class _loginState extends State<login> {
                               ),
                             ),
                             Row(
+                              mainAxisSize: MainAxisSize.max,
                               children: [
+                                Checkbox(
+                                  checkColor: Colors.grey[100],
+                                  activeColor: Colors.black87,
+                                  value: _isChecked,
+                                  onChanged: (bool value) {
+                                    setState(() {
+                                      _isChecked = value;
+                                    });
+                                  },
+                                ),
+                                Text(
+                                  'Keep me signed in',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.black87),
+                                ),
+                                Flexible(
+                                  child: FractionallySizedBox(
+                                    widthFactor: MediaQuery.of(context).size.width * 0.2,
+                                  ),
+                                ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(0, 0, 5, 0),
                                   child: TextButton(
                                     onPressed: () {
-                                      //Todo: Do some kind of confirmation here
-                                      Navigator.pushNamed(
-                                          context, '/forgot_password');
+
+                                      Navigator.pushNamed(context, '/forgot_password');
                                     },
                                     child: Text(
                                       'Forgot password?',
-                                      textAlign: TextAlign.left,
+                                      textAlign: TextAlign.right,
                                       style: TextStyle(
                                           fontSize: 14.0, color: Colors.grey[100]),
                                     ),
@@ -125,7 +154,7 @@ class _loginState extends State<login> {
                     Flexible(
                       flex: 20,
                       fit: FlexFit.loose,
-                      child: SizedBox(height: 200.0),
+                      child: SizedBox(height: screenHeight(context,dividedBy: 6)),
                     ), //Spacer
                     Flexible(
                       //SIGN IN
@@ -137,7 +166,7 @@ class _loginState extends State<login> {
                             opacity: 0.9,
                             child: FlatButton(
                               onPressed: () {
-                                Navigator.pushReplacementNamed(context, '/home');
+                                Navigator.pushNamedAndRemoveUntil(context, '/home', ModalRoute.withName('/'));
                               },
                               child: Text('SIGN IN',
                                   style: TextStyle(
